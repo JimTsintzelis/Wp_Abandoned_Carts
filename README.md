@@ -80,7 +80,11 @@ The **Abandoned Cart Recovery Plugin for WooCommerce** is a custom plugin design
 - **WP Mail SMTP**: Plugin used to configure and manage SMTP settings for reliable email delivery.
 - **AJAX**: Asynchronous JavaScript for real-time communication between the front-end and back-end.
 
+##Contributing
+Contributions are welcome! Please fork the repository and submit a pull request for any enhancements or bug fixes.
 
+##License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Support
 For any issues or support related to this plugin, please contact the author through the WordPress support forum or open an issue on the plugin's repository.
