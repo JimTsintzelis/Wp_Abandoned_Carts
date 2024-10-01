@@ -1,50 +1,89 @@
-Abandoned Carts Plugin for WooCommerce
 
-Description
-The Abandoned Carts Plugin for WooCommerce allows you to track and manage abandoned shopping carts in your WooCommerce store. The plugin automatically detects when a cart is abandoned and provides an option to configure the time threshold after which a cart is considered abandoned. You can view abandoned carts, send follow-up emails to customers, and improve your store's sales by recovering lost revenue.
+# Abandoned Cart Recovery Plugin for WooCommerce
 
-Features
-Track Abandoned Carts: Automatically detect and record abandoned carts based on the configured time threshold.
-Custom Time Threshold: Set the number of hours after which a cart is considered abandoned in the settings.
-Manage Abandoned Carts: View abandoned carts, including customer details, cart contents, and the time when the cart was abandoned.
-Email Notifications: Optionally send follow-up emails to customers with abandoned carts, encouraging them to complete their purchase.
-Installation
-Download the Plugin:
+**Version:** 1.0  
+**Author:Dimitris Tsintzelis 
+**Plugin Name:** Abandoned Cart Recovery Plugin  
+**Requires:** WordPress 5.5+ and WooCommerce 4.0+  
+Here's the updated `README.md` file, with the additional configuration step regarding the **Threshold Page**:
 
-Clone or download the plugin from the repository.
-Upload the Plugin:
+## Table of Contents
+1. [Project Overview](#project-overview)
+2. [Features](#features)
+3. [Installation](#installation)
+4. [Configuration and Usage](#configuration-and-usage)
+5. [Technologies Used](#technologies-used)
+6. [Screenshots](#screenshots) (optional)
+7. [Support](#support)
 
-Go to your WordPress admin area.
-Navigate to Plugins > Add New.
-Click on the Upload Plugin button.
-Select the ZIP file of the plugin and click Install Now.
-Activate the Plugin:
+## Project Overview
+The **Abandoned Cart Recovery Plugin for WooCommerce** is a custom plugin designed to help online stores track and recover abandoned carts. By sending automated recovery emails to customers, the plugin aims to enhance user engagement, increase conversion rates, and ultimately reduce cart abandonment rates. This plugin also features a robust admin dashboard for managing email templates, tracking abandoned orders, and viewing user subscription statuses.
 
-After installation, click Activate to enable the plugin on your site.
-Configuration
-Access Plugin Settings:
+## Features
+- **Real-Time Cart Tracking:** Captures user information and cart details when items are added to the cart but the checkout process is not completed.
+- **Custom Email Notifications:** Sends personalized recovery emails to users, with cart contents and available discount codes.
+- **Subscription Management:** Allows users to subscribe or unsubscribe from receiving recovery emails.
+- **Admin Dashboard:** Provides an intuitive interface for viewing and managing abandoned carts, customizing email templates, and sending manual email notifications.
+- **Dynamic Cart Updates:** Avoids duplicate entries by updating the existing user cart record when additional items are added.
 
-Go to the WordPress admin dashboard.
-Navigate to WooCommerce > Abandoned Carts.
-Set Abandoned Cart Threshold:
+## Installation
+1. Download the plugin files and place them in the `/wp-content/plugins/` directory.
+2. Activate the plugin through the WordPress Admin dashboard by navigating to **Plugins > Installed Plugins** and clicking on **Activate** under the "Abandoned Cart Recovery Plugin" entry.
+3. Ensure WooCommerce is installed and activated.
 
-In the settings page, you can set the time threshold in hours. This determines how long after inactivity a cart is marked as abandoned.
-Click Save Changes to apply your settings.
-Usage
-View Abandoned Carts:
+## Configuration and Usage
+### 1. Setting Up the Plugin:
+   - After activation, navigate to the **Abandoned Cart Recovery** menu in the WordPress admin dashboard.
+   - Set up your email template under the **Email Template** page by filling out the Subject, Salutation, Body, Closing, and Signature fields.
 
-Abandoned carts will automatically be recorded in the database once they meet the threshold.
-You can view the details of these carts, including the products, customer information, and the time of abandonment.
-Manage and Recover Abandoned Carts:
+### 2. Setting Up Email Delivery:
+   - To send recovery emails, you must set up the **WP Mail SMTP** plugin:
+     1. Install and activate the **WP Mail SMTP** plugin.
+     2. Configure your SMTP settings by navigating to **WP Mail SMTP > Settings** in the WordPress admin menu.
+     3. Choose your desired mailer service (e.g., Gmail, SendGrid, Mailgun, etc.) and complete the necessary configurations.
+     4. Save the changes and run a test email to ensure proper setup.
+   - The plugin uses `PHPMailer` for sending emails, and configuring the **WP Mail SMTP** plugin is essential for ensuring emails are delivered successfully.
 
-Use the data from abandoned carts to follow up with customers via email or other methods to encourage them to complete their purchases.
-Customization
-The plugin's behavior can be customized by editing the core plugin files. For advanced users, additional features like email notifications and custom reporting can be added.
-Support
-If you encounter any issues or have questions, please open an issue in the repository or contact the plugin author via the WordPress support forum.
+### 3. Configuring the Abandonment Threshold:
+   - Before tracking abandoned carts, set the abandonment threshold to define when a cart is considered abandoned.
+     - Go to the **Threshold Settings** page under the **Abandoned Cart Recovery** menu.
+     - Set the number of minutes/hours/days after which a cart is considered abandoned if the user has not proceeded to checkout.
+   - Once the threshold is configured, abandoned carts will be displayed in the **Abandoned Orders** page.
 
-Contributing
-Contributions are welcome! If you'd like to contribute, please fork the repository, make your changes, and submit a pull request.
+### 4. Viewing Abandoned Carts:
+   - Go to the **Abandoned Orders** page to view a list of all abandoned carts, including user information, cart contents, and subscription status.
+   - Use the checkboxes to select users and manually send email reminders.
 
-License
-This plugin is licensed under the MIT License. You are free to use, modify, and distribute it as you see fit.
+### 5. Managing Email Templates:
+   - The **Email Template** page allows you to customize the content of recovery emails.
+   - Choose from available WooCommerce coupons and add them to the template.
+   - Save the template to be used in manual or automated email notifications.
+
+### 6. Sending Email Notifications:
+   - From the **Abandoned Orders** page, select one or more users and click **Send Email** to send a recovery email using the saved template.
+   - The email will include the cart contents and a link for users to return and complete their purchase.
+
+### 7. Tracking Recovery Statistics:
+   - Navigate to the **Order Analytics** page to view detailed statistics about recovery emails and their effectiveness.
+   - This page shows metrics such as:
+     - Number of recovery emails sent.
+     - Orders placed through email links.
+     - Revenue generated from recovered orders.
+
+## Technologies Used
+- **WordPress & WooCommerce**: Core platforms for creating the plugin and managing e-commerce functionalities.
+- **PHP**: Server-side language for plugin development, database interactions, and email handling.
+- **HTML/CSS**: Used to create and style the admin dashboard interface and email templates.
+- **JavaScript**: Enhances interactivity and functionality on the admin dashboard.
+- **MySQL**: Database system for storing abandoned cart data and user information.
+- **PHPMailer**: A PHP library used for sending email notifications from the plugin.
+- **WP Mail SMTP**: Plugin used to configure and manage SMTP settings for reliable email delivery.
+- **AJAX**: Asynchronous JavaScript for real-time communication between the front-end and back-end.
+
+
+
+## Support
+For any issues or support related to this plugin, please contact the author through the WordPress support forum or open an issue on the plugin's repository.
+
+
+
